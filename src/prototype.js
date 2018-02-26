@@ -49,40 +49,54 @@
   hamsterHuey.destroy(); // returns 'Game object was removed from the game.'
 */
 
-class GameObject {
-  constructor(obj) {
-    this.createdAt = obj.createdAt;
-    this.dimensions = obj.dimensions;
-  }
-  GameObject.prototype.destroy = function(destroyed) {
-    console.log('Game object was removed from the game.') // Returns the string 'Game object was removed from the game.'
-  };
-}
+// class GameObject {
+//   constructor(obj) {
+//     this.createdAt = obj.createdAt;
+//     this.dimensions = obj.dimensions;
+//   }
+//   // GameObject.prototype.destroy = function(destroyed) {
+//   //   console.log('Game object was removed from the game.') // Returns the string 'Game object was removed from the game.'
+//   // };
+//   GameObject;
+//   prototype;
+//   destroy = function(destroyed) {
+//     console.log('Game object was removed from the game.'); // Returns the string 'Game object was removed from the game.'
+//   };
+// }
 
-class NPC extends GameObject {
-  constructor(npcObj) {
-    super(npcObj);
-    this.hp = 5;
-    this.name = npcObj.name;
+function GameObject(obj) {
+  this.createdAt = obj.createdAt;
+  this.dimensions = obj.dimensions;
   }
-  NPC.prototype.takeDamage = function(damage) {
-    console.log(`${this.name} took damage.`) // Returns the string '<object name> took damage.'
+  GameObject.prototype.destroy = function() {
+    return ('Game object was removed from the game.')
   };
-}
 
-class Humanoid extends NPC {
-  constructor(humanoidObj) {
-    super(humanoidObj);
-    this.faction = humanoidObj.faction;
-    this.weapons = humanoidObj.weapons;
-    this.language = humanoidObj.language;
-  }
-  Humanoid.prototype.greet = function(greeting) {
-    console.log(`${this.name} offers a greeting in ${this.language}.`) // Returns "(name) offers a greeting in (language)."
-  };
-}
 
-const hamsterHuey = new Humanoid({
+// class NPC extends GameObject {
+//   constructor(npcObj) {
+//     super(npcObj);
+//     this.hp = 5;
+//     this.name = npcObj.name;
+//   }
+//   NPC.prototype.takeDamage = function(damage) {
+//     console.log(`${this.name} took damage.`) // Returns the string '<object name> took damage.'
+//   };
+// }
+
+// class Humanoid extends NPC {
+//   constructor(humanoidObj) {
+//     super(humanoidObj);
+//     this.faction = humanoidObj.faction;
+//     this.weapons = humanoidObj.weapons;
+//     this.language = humanoidObj.language;
+//   }
+//   Humanoid.prototype.greet = function(greeting) {
+//     console.log(`${this.name} offers a greeting in ${this.language}.`) // Returns "(name) offers a greeting in (language)."
+//   };
+// }
+
+const hamsterHuey = new GameObject({
   createdAt: new Date(),
   dimensions: {
     length: 2,
@@ -98,7 +112,7 @@ const hamsterHuey = new Humanoid({
   language: 'Hamsterish',
 });
 
-console.log(hamsterHuey);
+console.log(hamsterHuey.destroy());
 
 
 
