@@ -49,6 +49,27 @@
   hamsterHuey.destroy(); // returns 'Game object was removed from the game.'
 */
 
+class GameObject {
+  constructor(obj) {
+    this.createdAt = obj.createdAt;
+    this.dimensions = obj.dimensions;
+  }
+
+  GameObject.prototype.destroy = function(destroyed) {
+    console.log('Game object was removed from the game.') // Return string 'Game object was removed from the game.'
+  };
+}
+
+class NPC extends GameObject {
+  constructor(npcObj) {
+    super(npcObj);
+  }
+}
+
+
+
+
+
 /* eslint-disable no-undef */
 
 module.exports = {
