@@ -63,7 +63,12 @@ class GameObject {
 class NPC extends GameObject {
   constructor(npcObj) {
     super(npcObj);
+    this.hp = 5;
+    this.name = //??
   }
+  NPC.prototype.takeDamage = function(damage) {
+    console.log(`${this.name} took damage.`) // Returns the string '<object name> took damage.'
+  };
 }
 
 
