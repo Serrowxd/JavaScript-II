@@ -49,28 +49,24 @@
   hamsterHuey.destroy(); // returns 'Game object was removed from the game.'
 */
 
-// class GameObject {
-//   constructor(obj) {
-//     this.createdAt = obj.createdAt;
-//     this.dimensions = obj.dimensions;
-//   }
-//   // GameObject.prototype.destroy = function(destroyed) {
-//   //   console.log('Game object was removed from the game.') // Returns the string 'Game object was removed from the game.'
-//   // };
-//   GameObject;
-//   prototype;
-//   destroy = function(destroyed) {
-//     console.log('Game object was removed from the game.'); // Returns the string 'Game object was removed from the game.'
-//   };
-// }
-
-function GameObject(obj) {
-  this.createdAt = obj.createdAt;
-  this.dimensions = obj.dimensions;
+class GameObject {
+  constructor(obj) {
+    this.createdAt = obj.createdAt;
+    this.dimensions = obj.dimensions;
   }
-  GameObject.prototype.destroy = function() {
-    return ('Game object was removed from the game.')
+  destroy() {
+    console.log('Game object was removed from the game.'); // Returns the string 'Game object was removed from the game.'
   };
+}
+// Same as GameObject.prototype.destroy, except only destroy() { } needs to be put.
+
+// function GameObject(obj) {
+//   this.createdAt = obj.createdAt;
+//   this.dimensions = obj.dimensions;
+//   }
+//   GameObject.prototype.destroy = function() {
+//     return ('Game object was removed from the game.')
+//   };
 
 
 // class NPC extends GameObject {
