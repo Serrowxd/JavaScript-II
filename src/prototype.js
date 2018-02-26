@@ -54,9 +54,8 @@ class GameObject {
     this.createdAt = obj.createdAt;
     this.dimensions = obj.dimensions;
   }
-
   GameObject.prototype.destroy = function(destroyed) {
-    console.log('Game object was removed from the game.') // Return string 'Game object was removed from the game.'
+    console.log('Game object was removed from the game.') // Returns the string 'Game object was removed from the game.'
   };
 }
 
@@ -64,13 +63,42 @@ class NPC extends GameObject {
   constructor(npcObj) {
     super(npcObj);
     this.hp = 5;
-    this.name = //??
+    this.name = npcObj.name;
   }
   NPC.prototype.takeDamage = function(damage) {
     console.log(`${this.name} took damage.`) // Returns the string '<object name> took damage.'
   };
 }
 
+class Humanoid extends NPC {
+  constructor(humanoidObj) {
+    super(humanoidObj);
+    this.faction = humanoidObj.faction;
+    this.weapons = humanoidObj.weapons;
+    this.language = humanoidObj.language;
+  }
+  Humanoid.prototype.greet = function(greeting) {
+    console.log(`${this.name} offers a greeting in ${this.language}.`) // Returns "(name) offers a greeting in (language)."
+  };
+}
+
+const hamsterHuey = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2,
+    width: 1,
+    height: 1,
+  },
+  hp: 5,
+  name: 'Hamster Huey',
+  faction: 'Gooey Kablooie',
+  weapons: [
+    'bubblegum',
+  ],
+  language: 'Hamsterish',
+});
+
+console.log(hamsterHuey);
 
 
 
